@@ -6,7 +6,6 @@ import Navbar from './components/navbar.component';
 import AddTask from './components/addnewtask.component';
 
 
-
 function App() {
   return (
     <Router>
