@@ -1,78 +1,64 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DatePicker from 'react-datepicker';
 
 
-export default class AddTask extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            username:"",
-            description:"",
-            startdate:new Date(),
-            deadline: new Date()
+export default function AddTask (){
+   
+        const [username, setUsername]=useState("");
+        const [description, setDescription]=useState("");
+        const [taskheading, setTaskheading] = useState("");
+        const [startdate, setStartdate]= useState(new Date());
+        const [deadline, setDeadline] = useState(new Date());
+
+        function  onChangeUsername(e){
+            setUsername(e.target.value)
+        }
+        
+        function onChangeDescription(e){
+            setDescription(e.target.value);
+        }
+        
+        function onChangeTaskHeading(e){
+            setTaskheading(e.target.value)
         }
 
-        this.onChangeUsername= this.onChangeUsername.bind(this);
-        this.onChangeDescription=this.onChangeDescription.bind(this);
-        this.onChangeStartDate= this.onChangeStartDate.bind(this);
-        this.onChangeDeadline = this.onChangeDeadline.bind(this);
-        
+        function onChangeStartDate(date){
+            setStartdate(date)     
+         }
 
-    }
-    onChangeUsername(e){
-        this.setState({
-            username:e.target.value
-        })
-    }
-    onChangeDescription(e){
-        this.setState({
-            description:e.target.value
-        })
-    }
-    onChangeTaskHeading(e){
-        this.setState({
-            taskheading:e.target.value
-        })
-    }
-    onChangeStartDate(date){
-        this.setState({
-            startdate:date
-        })
-    }
-    onChangeDeadline(date){
-        this.setState({
-            deadline:date
-        })
-    }
-   
-    render(){
+         function onChangeDeadline(date){
+            setDeadline(date)
+        }
+
+
         return(
             <div className="container">
                 <h2 className="text-center">Add New Task</h2>
                 <form>
                     <div className="form-group">
                         <label>User name:</label>
-                        <input type="text" className="form-control" value={this.state.username} onChange={this.onChangeUsername} />
+                        <input type="text" className="form-control" value={username} onChange={onChangeUsername} />
                     </div>
                     <div className="form-group">
                         <label>Task heading</label>
-                        <input type="text" className="form-control" value={this.state.taskheading} onChange={this.onChangeTaskHeading} />
+                        <input type="text" className="form-control" value={taskheading} onChange={onChangeTaskHeading} />
                     </div>
                     <div className="form-group">
                         <label>Description:</label>
-                        <input type="text" className="form-control" value={this.state.description} onChange={this.onChangeDescription} />
+                        <input type="text" className="form-control" value={description} onChange={onChangeDescription} />
                     </div>
                     <div className="form-group">
                         <label>Start date:</label> <br/>
-                        <DatePicker selected={this.state.startdate} onChange={this.onChangeStartDate}/>
+                        <DatePicker selected={startdate} onChange={onChangeStartDate}/>
                     </div>
                     <div className="form-group">
                         <label>Deadline:</label><br/>
-                        <DatePicker selected={this.state.deadline} onChange={this.onChangeDeadline} />
+                        <DatePicker selected={deadline} onChange={onChangeDeadline} />
                     </div>
                 </form>
             </div>
         );
-    }
-}
+
+}   
+   
