@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default class Navbar extends Component{
-    render(){
+export default function Navbar(){
+
         return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link to="/mern-crud-app/" className="navbar-brand">TRADECODER</Link>
@@ -13,6 +13,5 @@ export default class Navbar extends Component{
                 <li className="nav-item"><Link to="/mern-crud-app/signup/" className="nav-link">Signup</Link></li>
             </ul>
         </nav>
-        );
-    }
+        );    
 }
