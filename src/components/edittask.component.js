@@ -48,11 +48,11 @@ export default function EditTask(){
                 </div>
                 <div className="form-group">
                         <label>Task heading</label>
-                        <input type="text" className="form-control" value={taskheading} onChange={onChangeTaskHeading} />
+                        <input type="text" className="form-control" value={taskheading} onChange={onChangeTaskHeading} required />
                     </div>
                     <div className="form-group">
                         <label>Description:</label>
-                        <textarea rows="3" cols="50" className="form-control" value={description} onChange={onChangeDescription}></textarea>
+                        <textarea rows="3" cols="50" className="form-control" value={description} onChange={onChangeDescription} required></textarea>
                     </div>
                     <div className="form-group">
                         <label>Start date:</label> <br/>
@@ -63,8 +63,8 @@ export default function EditTask(){
                         <DatePicker selected={deadline} onChange={onChangeDeadline} />
                     </div>
                     <div className="form-group">
-                        <label>Edit Password:</label>
-                        <input type="password" className="form-control" value={editpassword} onChange={onChangeEditPassword} />
+                        <label>Password (Edit password that you put while creating this task):</label>
+                        <input type="password" className="form-control" value={editpassword} onChange={onChangeEditPassword} required />
                     </div>
                     <div>
                         <button type="submit" className="btn btn-primary">Submit</button>
