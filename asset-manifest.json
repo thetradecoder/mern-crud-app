@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/mern-crud-app/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/mern-crud-app/static/js/main.c6afef50.chunk.js",
-    "main.js.map": "/mern-crud-app/static/js/main.c6afef50.chunk.js.map",
+    "main.js": "/mern-crud-app/static/js/main.7cde61d4.chunk.js",
+    "main.js.map": "/mern-crud-app/static/js/main.7cde61d4.chunk.js.map",
     "runtime-main.js": "/mern-crud-app/static/js/runtime-main.41823505.js",
     "runtime-main.js.map": "/mern-crud-app/static/js/runtime-main.41823505.js.map",
     "static/css/2.b56a0318.chunk.css": "/mern-crud-app/static/css/2.b56a0318.chunk.css",
-    "static/js/2.fe7ab23e.chunk.js": "/mern-crud-app/static/js/2.fe7ab23e.chunk.js",
-    "static/js/2.fe7ab23e.chunk.js.map": "/mern-crud-app/static/js/2.fe7ab23e.chunk.js.map",
+    "static/js/2.cda0c813.chunk.js": "/mern-crud-app/static/js/2.cda0c813.chunk.js",
+    "static/js/2.cda0c813.chunk.js.map": "/mern-crud-app/static/js/2.cda0c813.chunk.js.map",
     "index.html": "/mern-crud-app/index.html",
-    "precache-manifest.6c859b92dc252ea45afea07131007d9d.js": "/mern-crud-app/precache-manifest.6c859b92dc252ea45afea07131007d9d.js",
+    "precache-manifest.5d326e055aecf10cc970124d2bff5f05.js": "/mern-crud-app/precache-manifest.5d326e055aecf10cc970124d2bff5f05.js",
     "service-worker.js": "/mern-crud-app/service-worker.js",
     "static/css/2.b56a0318.chunk.css.map": "/mern-crud-app/static/css/2.b56a0318.chunk.css.map",
     "static/css/main.5ecd60fb.chunk.css.map": "/mern-crud-app/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.fe7ab23e.chunk.js.LICENSE.txt": "/mern-crud-app/static/js/2.fe7ab23e.chunk.js.LICENSE.txt"
+    "static/js/2.cda0c813.chunk.js.LICENSE.txt": "/mern-crud-app/static/js/2.cda0c813.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.41823505.js",
     "static/css/2.b56a0318.chunk.css",
-    "static/js/2.fe7ab23e.chunk.js",
+    "static/js/2.cda0c813.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.c6afef50.chunk.js"
+    "static/js/main.7cde61d4.chunk.js"
   ]
 }
