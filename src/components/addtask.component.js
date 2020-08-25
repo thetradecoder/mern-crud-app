@@ -10,6 +10,7 @@ export default function AddTask (){
         const [taskheading, setTaskheading] = useState("");
         const [startdate, setStartdate]= useState(new Date());
         const [deadline, setDeadline] = useState(new Date());
+        const [editpassword, setEditpassword]=useState("");
 
         function  onChangeUsername(e){
             setUsername(e.target.value)
@@ -30,6 +31,11 @@ export default function AddTask (){
          function onChangeDeadline(date){
             setDeadline(date)
         }
+        
+        function onChangeEditPassword(e){
+            setEditpassword(e.target.value)
+        }
+
         function onSubmitTask(e){
             e.preventDefault();
             // come back here after finishing backend work
@@ -60,6 +66,10 @@ export default function AddTask (){
                     <div className="form-group">
                         <label>Deadline:</label><br/>
                         <DatePicker selected={deadline} onChange={onChangeDeadline} />
+                    </div>
+                    <div className="form-group">
+                        <label>Edit Password:</label>
+                        <input type="password" className="form-control" value={editpassword} onChange={onChangeEditPassword} />
                     </div>
                     <div>
                         <button type="submit" className="btn btn-primary">Submit</button>

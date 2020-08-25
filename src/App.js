@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from './components/navbar.component';
 import AddTask from './components/addtask.component';
-
+import EditTask from './components/edittask.component';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <Navbar />
       <h1 className="text-center">MERN Stack Todo App<br/> (under development)</h1>
       <Route path="/mern-crud-app/add" component={AddTask}/>
+      <Route path="/mern-crud-app/edit" component={EditTask}/>
     </Router>
   );
 }
