@@ -30,12 +30,16 @@ export default function AddTask (){
          function onChangeDeadline(date){
             setDeadline(date)
         }
+        function onSubmitTask(e){
+            e.preventDefault();
+
+        }
 
 
         return(
             <div className="container">
                 <h2 className="text-center">Add New Task</h2>
-                <form>
+                <form onSubmit={onSubmitTask}>
                     <div className="form-group">
                         <label>User name:</label>
                         <input type="text" className="form-control" value={username} onChange={onChangeUsername} />
@@ -46,7 +50,7 @@ export default function AddTask (){
                     </div>
                     <div className="form-group">
                         <label>Description:</label>
-                        <input type="text" className="form-control" value={description} onChange={onChangeDescription} />
+                        <textarea rows="5" cols="50" className="form-control" value={description} onChange={onChangeDescription}></textarea>
                     </div>
                     <div className="form-group">
                         <label>Start date:</label> <br/>
@@ -55,6 +59,9 @@ export default function AddTask (){
                     <div className="form-group">
                         <label>Deadline:</label><br/>
                         <DatePicker selected={deadline} onChange={onChangeDeadline} />
+                    </div>
+                    <div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>
