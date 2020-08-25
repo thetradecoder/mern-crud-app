@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from './components/navbar.component';
-import AddTask from './components/addnewtask.component';
+import AddTask from './components/addtask.component';
 
 
 function App() {

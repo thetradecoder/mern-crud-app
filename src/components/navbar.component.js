@@ -10,6 +10,7 @@ export default function Navbar(){
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item"><Link to="/mern-crud-app/" className="nav-link">Todo List</Link></li>
                 <li className="nav-item"><Link to="/mern-crud-app/add/" className="nav-link">Add Task</Link></li>
+                <li className="nav-item"><Link to="/mern-crud-app/edit/" className="nav-link">Edit Task</Link></li>
                 <li className="nav-item"><Link to="/mern-crud-app/signup/" className="nav-link">Signup</Link></li>
             </ul>
         </nav>
