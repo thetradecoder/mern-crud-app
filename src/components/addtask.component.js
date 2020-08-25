@@ -57,7 +57,7 @@ export default function AddTask (){
                     </div>
                     <div className="form-group">
                         <label>Description:</label>
-                        <textarea rows="5" cols="50" className="form-control" value={description} onChange={onChangeDescription}></textarea>
+                        <textarea rows="3" cols="50" className="form-control" value={description} onChange={onChangeDescription}></textarea>
                     </div>
                     <div className="form-group">
                         <label>Start date:</label> <br/>
