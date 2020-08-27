@@ -7,7 +7,7 @@ export default function AddTask (){
    
         const [username, setUsername]=useState("");
         const [description, setDescription]=useState("");
-        const [taskheading, setTaskheading] = useState("");
+        const [heading, setHeading] = useState("");
         const [startdate, setStartdate]= useState(new Date());
         const [deadline, setDeadline] = useState(new Date());
         const [editpassword, setEditpassword]=useState("");
@@ -20,8 +20,8 @@ export default function AddTask (){
             setDescription(e.target.value);
         }
         
-        function onChangeTaskHeading(e){
-            setTaskheading(e.target.value)
+        function onChangeHeading(e){
+            setHeading(e.target.value)
         }
 
         function onChangeStartDate(date){
@@ -53,7 +53,7 @@ export default function AddTask (){
                     </div>
                     <div className="form-group">
                         <label>Task heading</label>
-                        <input type="text" className="form-control" value={taskheading} onChange={onChangeTaskHeading} required />
+                        <input type="text" className="form-control" value={heading} onChange={onChangeHeading} required />
                     </div>
                     <div className="form-group">
                         <label>Description:</label>

@@ -6,8 +6,7 @@ import '../App.css';
 export default function SideNav(){
     return(
         <div className="side-nav">
-            <a herf="#" >Introduction</a>
-
+            <button className="btn btn-default" >Introduction</button>
         </div>
     );
 }

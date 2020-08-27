@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery.min.js';
-import 'popper.js/dist/popper.min.js';
+// import 'popper.js/dist/popper.js';
 
 
 export default function Navbar(){
