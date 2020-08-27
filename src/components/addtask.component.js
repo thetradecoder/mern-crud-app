@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DatePicker from 'react-datepicker';
+import axios from 'axios';
 
 
 export default function AddTask (){
@@ -11,6 +12,19 @@ export default function AddTask (){
         const [startdate, setStartdate]= useState(new Date());
         const [deadline, setDeadline] = useState(new Date());
         const [editpassword, setEditpassword]=useState("");
+        const [users, setUsers]=useState([]);
+
+        useEffect(()=>{
+            axios.get('http://localhost:5000/users')
+            .then(res=>{
+                if(res.data.username.length>0){
+                    setUsers(res.data.username);
+                    username = res.data.username[0]
+                }
+            })
+            .catch(err=>console.log(err))
+
+        })
 
         function  onChangeUsername(e){
             setUsername(e.target.value)
@@ -38,7 +52,26 @@ export default function AddTask (){
 
         function onSubmitTask(e){
             e.preventDefault();
-            // come back here after finishing backend work
+            const task = {
+                username,
+                heading,
+                description,
+                startdate,
+                deadline,
+                editpassword
+            }
+
+            axios.post('http://localhost:5000/todos/add', task)
+            .then(()=>{
+                window.alert('New task added');
+                setUsername("");
+                setHeading("");
+                setDescription("");
+                setStartdate(new Date());
+                setDeadline(new Date());
+                setEditpassword("");
+            })
+            .catch(err=>window.alert(err));
 
         }
 
@@ -49,7 +82,14 @@ export default function AddTask (){
                 <form onSubmit={onSubmitTask}>
                     <div className="form-group">
                         <label>User name:</label>
-                        <input type="text" className="form-control" value={username} onChange={onChangeUsername} required />
+                       <select required className="form-control" value={username} onChange={onChangeUsername}>
+                           {users.map(user=>{
+                               return (
+                               <option key={user} value={user}>{user}</option>
+                               )
+                           })}
+
+                       </select>
                     </div>
                     <div className="form-group">
                         <label>Task heading</label>
