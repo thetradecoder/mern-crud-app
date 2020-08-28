@@ -27,7 +27,7 @@ export default function EditTask(){
         })
         .catch(err=>console.log(err));
 
-    })
+    }, [])
 
     function onChangeHeading(e){
         setHeading(e.target.value)
