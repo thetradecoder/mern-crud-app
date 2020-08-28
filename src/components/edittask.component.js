@@ -59,8 +59,11 @@ export default function EditTask(){
             deadline,
             editpassword
         }
-        axios.post('http://localhost:5000/todos/add', updateData)
-        .then(()=>window.alert('Todo updated'))
+        axios.post(`http://localhost:5000/todos/update/${id}`, updateData)
+        .then(()=>{
+            window.alert('Todo updated');
+            window.location = ('/mern-crud-app/');
+        })
         .catch(err=>window.alert('update failed'));
     }
 
