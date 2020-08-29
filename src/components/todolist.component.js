@@ -1,15 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap';
+import 'jquery/dist/jquery.min.js';
+
 
 const Todo = props=>(
     <tr>
         <td>{props.todos.username}</td>
-       <td><Link to={`/mern-crud-app/todo-details/${props.todos._id}`} className="nav-link">{props.todos.heading}</Link></td>
+        <td><a href={`#me${props.todos._id}`} data-toggle="collapse">{props.todos.heading}</a>
+<div id={`me${props.todos._id}`} className="collapse" >{props.todos.description}</div>
+        </td>
         <td>{props.todos.startdate.substring(0,10)}</td>
         <td>{props.todos.deadline.substring(0,10)}</td>
-        <td><Link to={`/mern-crud-app/edit/${props.todos._id}`} className="nav-link">Action</Link></td>
+        <td><Link to={`/mern-crud-app/edit/${props.todos._id}`} className="nav-link d-inline">Edit</Link><Link className="nav-link d-inline">Delete</Link></td>
     </tr>
 )
 export default function TodoList(){
@@ -33,11 +38,11 @@ export default function TodoList(){
     
     return(
         <div className="container">
-            <table className="table table-responsive-lg table-hover">
+            <table className="table table-responsive-lg table-striped">
                 <thead className="thead thead-light">
                     <tr>
                         <th>User name</th>
-                        <th>Title</th>                        
+                        <th>Title/Description</th>                        
                         <th>Start date</th>
                         <th>Deadline</th>
                         <th>Action</th>

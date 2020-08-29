@@ -27,7 +27,7 @@ export default function EditTask(){
         })
         .catch(err=>console.log(err));
 
-    }, [])
+    }, [id])
 
     function onChangeHeading(e){
         setHeading(e.target.value)
@@ -52,6 +52,7 @@ export default function EditTask(){
     function onEditSubmit(e){
         e.preventDefault();
         const updateData = {
+            _id:id,
             username,
             heading,
             description,
