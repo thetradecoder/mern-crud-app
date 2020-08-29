@@ -19,7 +19,7 @@ useEffect(()=>{}, []);
 // Since html id attribute can not be started
 // with number, it is very common to get trouble 
 // while generating id automatically from 
-// a data source, it will fail working if the source
+// a data source. It will fail working if the source
 // has the data starting with a number .
 // To solve this issue we can add a common letter
 // before the source data, like:  id={`a${source}`}
