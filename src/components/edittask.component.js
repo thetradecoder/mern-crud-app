@@ -51,8 +51,7 @@ export default function EditTask(){
 
     function onEditSubmit(e){
         e.preventDefault();
-        const updateData = {
-            _id:id,
+        const updateData = {           
             username,
             heading,
             description,
@@ -60,12 +59,12 @@ export default function EditTask(){
             deadline,
             editpassword
         }
-        axios.post(`http://localhost:5000/todos/update/${id}`, updateData)
+        axios.put(`http://localhost:5000/todos/update/${id}`, updateData)
         .then(()=>{
             window.alert('Todo updated');
             window.location = ('/mern-crud-app/');
         })
-        .catch(err=>window.alert('update failed'));
+        .catch(err=>window.alert('update failed, incorrect password'));
     }
 
 

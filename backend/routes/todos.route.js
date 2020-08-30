@@ -28,8 +28,9 @@ router.route('/:id').get((req,res)=>{
     .catch(err=>res.status(400).send(err));
 });
 
-router.route('/update/:id').post((req, res)=>{
-    Todo.findById(req.params.id)
+
+router.route('/update/:id').put((req, res)=>{
+    Todo.findOne({_id:req.params.id, editpassword:req.body.editpassword})
     .then(data=>{
         data.username = req.body.username;
         data.heading = req.body.heading;
@@ -38,11 +39,15 @@ router.route('/update/:id').post((req, res)=>{
         data.deadline = req.body.deadline;
 
         data.save()
-        .then(d=>res.send('Todo updated'))
+        .then(data=>res.send(data))
         .catch(err=>res.status(400).send(err))
     })
     .catch(err=>res.status(400).send(err));
 });
+
+
+
+
 
 
 module.exports = router;
