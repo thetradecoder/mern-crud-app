@@ -6,14 +6,12 @@ import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery.min.js';
 
 
-
-
 const Todo = props=>{
     function onDeleteTodo(e){
         e.preventDefault();
         axios.delete(`http://localhost:5000/todos/delete/${props.todos._id}`)
         .then(()=>{
-            window.alert('Deleted')
+            window.alert('Deleted');           
         })
         .catch(err=>window.alert('Delete failed'))
     }
