@@ -6,7 +6,18 @@ import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery.min.js';
 
 
-const Todo = props=>(
+
+
+const Todo = props=>{
+    function onDeleteTodo(e){
+        e.preventDefault();
+        axios.delete(`http://localhost:5000/todos/delete/`)
+        .then(()=>{
+            window.alert('Deleted')
+        })
+        .catch(err=>window.alert('Delete failed'))
+    }
+    return (
     <tr>
         <td>{props.todos.username}</td>
         <td><a href={`#me${props.todos._id}`} data-toggle="collapse">{props.todos.heading}</a>
@@ -14,9 +25,22 @@ const Todo = props=>(
         </td>
         <td>{props.todos.startdate.substring(0,10)}</td>
         <td>{props.todos.deadline.substring(0,10)}</td>
-        <td><Link to={`/mern-crud-app/edit/${props.todos._id}`} className="nav-link d-inline">Edit</Link><Link className="nav-link d-inline">Delete</Link></td>
+        <td>
+            <Link to={`/mern-crud-app/edit/${props.todos._id}`} className="nav-link d-inline">Edit</Link>
+            <a href={`#del${props.todos._id}`} data-toggle="collapse" className="nav-link d-inline">Delete</a>
+            <div id={`del${props.todos._id}`} className="collapse">
+                <form onSubmit={onDeleteTodo}>
+                    <div className="form-group">
+                        <input name="id" type="hidden" value={props.todos._id}/>
+                        <input name="editpassword" type="password" className="form-control" placeholder="Insert password"/>
+                        <input type ="submit" className="form-control btn btn-danger" value="Delete"/>
+                    </div>
+                </form>
+            </div>
+        </td>
     </tr>
 )
+}
 export default function TodoList(){
     const [todos, setTodos]= useState([]);
 
@@ -34,6 +58,7 @@ export default function TodoList(){
             return <Todo todos={data} key={data._id}/>
         })
     }
+
 
     
     return(

@@ -97,7 +97,7 @@ export default function EditTask(){
                         <input type="password" className="form-control" value={editpassword} onChange={onChangeEditPassword} required />
                     </div>
                     <div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary">Update</button>
                     </div>
             </form>
 
