@@ -13,13 +13,15 @@ import {useEffect} from "react";
 useEffect(()=>{}, []);
 
 
+// How to fix the value of dynamically-generated-html-id-attribute 
+// with JavaScript // Mamun Abdullah, @theTradeCoder @tradeCoder
 
-// Dynamically generated html id attribute with JavaScript//
-
-// Since html id attribute can not be started
-// with number, it is very common to get trouble 
-// while generating id automatically from 
-// a data source. It will fail working if the source
-// has the data starting with a number .
-// To solve this issue we can add a common letter
-// before the source data, like:  id={`a${source}`}
+// Since the value of html id attribute should not be started
+// with a number for css does not work with that, it is very 
+// common to get trouble while generating it automatically 
+// from a data source. It will fail working where the 
+// source data starts with a number for this purpose. 
+// To solve this issue we can add a text or letter
+// before the source data, like:  id={`mytext${source-data}`}
+// and set the target value like this: {`#mytext${source-data}`}
+// You must follow your relevant code syntax //
