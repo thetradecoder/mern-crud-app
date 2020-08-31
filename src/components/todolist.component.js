@@ -7,10 +7,16 @@ import 'jquery/dist/jquery.min.js';
 
 
 const Todo = props=>{
+
+    const [editpassword, setEditpassword] = useState("");
+    function onEditpassword(e){
+        setEditpassword(e.target.value)
+    }
     function onDeleteTodo(e){
         e.preventDefault();
-        axios.delete(`http://localhost:5000/todos/delete/${props.todos._id}`)
-        .then(()=>{
+        axios.delete(`http://localhost:5000/todos/delete/${props.todos._id}`, 
+        { headers: {'Content-Type': "application/json, text/plain, */*"}})
+        .then((res)=>{ console.log(res);
             window.alert('Deleted');           
         })
         .catch(err=>window.alert('Delete failed'))
@@ -30,7 +36,7 @@ const Todo = props=>{
                 <form onSubmit={onDeleteTodo}>
                     <div className="form-group">
                         <input name="id" type="hidden" value={props.todos._id}/>
-                        <input name="editpassword" type="password" className="form-control" placeholder="Insert password"/>
+                        <input id="editpassword" name="editpassword" type="password" className="form-control" placeholder="Insert password" value={editpassword} onChange={onEditpassword}/>
                         <input type ="submit" className="form-control btn btn-danger" value="Delete"/>
                     </div>
                 </form>
@@ -40,7 +46,7 @@ const Todo = props=>{
 )
 }
 export default function TodoList(){
-    const [todos, setTodos]= useState([]);
+    const [todos, setTodos]= useState([]);  
 
     useEffect(()=>{
         axios.get('http://localhost:5000/todos')

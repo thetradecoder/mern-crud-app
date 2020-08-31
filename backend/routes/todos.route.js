@@ -46,9 +46,9 @@ router.route('/update/:id').put((req, res)=>{
 });
 
 router.route('/delete/:id').delete((req, res)=>{
-    Todo.findOneAndDelete({_id:req.body.id, editpassword:req.body.editpassword})
+    Todo.findByIdAndDelete({_id:req.params.id, editpassword: req.body.editpassword})
     .then(data=>res.send(data))
-    .catch(err=>res.send(err))
+    .catch(err=>res.status(400).send(err))
 })
 
 
