@@ -14,12 +14,13 @@ function App() {
     <Router>
       <Navbar />
       <h1 className="text-center">MERN Stack Todo App<br/> (under development)</h1>
-      <Route path="/mern-crud-app/" exact component={TodoList} />
+      <Route path="/mern-crud-app/" exact component={Login}/>
+      <Route path="/mern-crud-app/todos" component={TodoList} />
       <Route path="/mern-crud-app/add" component={AddTask}/>
       <Route path="/mern-crud-app/edit/:id" component={EditTask}/>
       <Route path="/mern-crud-app/signup" component={Signup}/>
       <Route path="/mern-crud-app/documents" component={Documents}/>
-      <Route path="/mern-crud-app/login" component={Login}/>
+      
     </Router>
   );
 }

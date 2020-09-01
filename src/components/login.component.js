@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from 'axios';
+
 
 
 export default function Login(){
@@ -16,7 +18,9 @@ export default function Login(){
     }
     function onSubmitLogin(e){
         e.preventDefault();
-        
+        axios.get('http://localhost:5000/users/login')
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err))
     }
 
     return(

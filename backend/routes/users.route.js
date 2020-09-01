@@ -11,6 +11,14 @@ router.route('/').get((req, res)=>{
 });
 
 
+// loging
+router.route('/login').get((req, res)=>{
+    User.findOne({username:req.body.username, password:req.body.password})
+   .then(data=>{if(data){res.send(data)}else{res.send('Data not found')}})
+   .catch(err=>res.status(400).send(err));
+   });
+
+
 // post user data via localhost:5000/users/signup
 router.route('/signup').post((req, res)=>{
     const username = req.body.username;
