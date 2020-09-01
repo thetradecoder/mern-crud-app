@@ -15,7 +15,8 @@ const Todo = props=>{
     function onDeleteTodo(e){
         e.preventDefault();
         axios.delete(`http://localhost:5000/todos/delete/${props.todos._id}/${editpassword}`)
-        .then((res)=>{ res.data.deletedCount>0?window.alert('Deleted'):window.alert('Incorrect information')
+        .then((res)=>{ res.data.deletedCount>0?window.alert('Deleted'):window.alert('Incorrect information'); 
+        window.location.reload('/');       
         })
         .catch(err=>window.alert('Delete failed'))
     }
