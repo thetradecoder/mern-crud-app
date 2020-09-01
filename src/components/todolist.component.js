@@ -14,10 +14,8 @@ const Todo = props=>{
     }
     function onDeleteTodo(e){
         e.preventDefault();
-        axios.delete(`http://localhost:5000/todos/delete/${props.todos._id}`, 
-        { headers: {'Content-Type': "application/json, text/plain, */*"}})
-        .then((res)=>{ console.log(res);
-            window.alert('Deleted');           
+        axios.delete(`http://localhost:5000/todos/delete/${props.todos._id}/${editpassword}`)
+        .then((res)=>{ res.data.deletedCount>0?window.alert('Deleted'):window.alert('Incorrect information')
         })
         .catch(err=>window.alert('Delete failed'))
     }
@@ -36,7 +34,7 @@ const Todo = props=>{
                 <form onSubmit={onDeleteTodo}>
                     <div className="form-group">
                         <input name="id" type="hidden" value={props.todos._id}/>
-                        <input id="editpassword" name="editpassword" type="password" className="form-control" placeholder="Insert password" value={editpassword} onChange={onEditpassword}/>
+                        <input type="password" className="form-control" placeholder="Insert password" value={editpassword} onChange={onEditpassword}/>
                         <input type ="submit" className="form-control btn btn-danger" value="Delete"/>
                     </div>
                 </form>
