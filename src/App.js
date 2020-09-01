@@ -7,6 +7,7 @@ import AddTask from './components/addtask.component';
 import EditTask from './components/edittask.component';
 import Signup from './components/signup.component';
 import Documents from './components/documents.component';
+import Login from './components/login.component';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/mern-crud-app/edit/:id" component={EditTask}/>
       <Route path="/mern-crud-app/signup" component={Signup}/>
       <Route path="/mern-crud-app/documents" component={Documents}/>
+      <Route path="/mern-crud-app/login" component={Login}/>
     </Router>
   );
 }
