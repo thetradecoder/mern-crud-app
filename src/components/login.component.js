@@ -18,9 +18,23 @@ export default function Login(){
     }
     function onSubmitLogin(e){
         e.preventDefault();
-        axios.get('http://localhost:5000/users/login')
-        .then(res=>console.log(res))
-        .catch(err=>console.log(err))
+
+        const log_auth={
+            username,
+            password
+        };
+
+        axios.post('http://localhost:5000/users/login', log_auth)
+        .then(res=>{
+            if(res.data){
+              setUsername(res.data.username)
+            }
+        })
+        .then(()=>{
+            axios.post('http://localhost:5000/todos/t', log_auth)
+            .then(res=>console.log(res.data))
+        })
+        .catch(err=>err);
     }
 
     return(

@@ -8,6 +8,13 @@ router.route('/').get((req, res)=>{
     .catch(err=>res.status(400).send(err));
 });
 
+router.route('/t').post((req, res)=>{
+Todo.find({username:req.body.username})
+.then((data)=>res.json(data))
+.catch(err=>res.status(400).send(err))
+});
+
+
 router.route('/add').post((req, res)=>{
     const username = req.body.username;
     const heading = req.body.heading;

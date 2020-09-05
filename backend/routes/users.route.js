@@ -12,9 +12,9 @@ router.route('/').get((req, res)=>{
 
 
 // loging
-router.route('/login').get((req, res)=>{
+router.route('/login').post((req, res)=>{
     User.findOne({username:req.body.username, password:req.body.password})
-   .then(data=>{if(data){res.send(data)}else{res.send('Data not found')}})
+   .then(data=>res.json(data))
    .catch(err=>res.status(400).send(err));
    });
 
