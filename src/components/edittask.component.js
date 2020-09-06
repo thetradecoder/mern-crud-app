@@ -74,7 +74,7 @@ export default function EditTask(){
             <h2 className="text-center">Edit Task</h2>
             <form onSubmit={onEditSubmit}>
                 <div className="form-group">
-                    <p>User name:<strong> {username} </strong> ** User_name not be changed</p>
+                    <p>Assigned to:<strong> {username} </strong> ** name change not allowed, make a new task if necessary</p>
                 </div>
                 <div className="form-group">
                         <label>Task heading</label>
