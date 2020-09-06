@@ -19,12 +19,16 @@ export default function AddTask (){
             axios.get('http://localhost:5000/users')
             .then(res=>{
                 if(res.data.username.length>0){
-                    setUsers(res.data.username);                    
+                    setUsers(res.data.username);                             
                 }
             })
             .catch(err=>console.log(err))
 
-        })
+        }, [])
+
+        useEffect(()=>{
+            setUsername(users[0])
+        }, [users]);
 
         function  onChangeUsername(e){
             setUsername(e.target.value)

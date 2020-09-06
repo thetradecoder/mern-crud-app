@@ -61,7 +61,7 @@ export default function EditTask(){
         }
         axios.put(`http://localhost:5000/todos/update/${id}`, updateData)
         .then(()=>{
-            window.alert('Todo updated');
+            window.alert('Updated');
             window.location = ('/mern-crud-app/');
         })
         .catch(err=>window.alert('update failed, incorrect password'));
