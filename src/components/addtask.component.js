@@ -81,7 +81,7 @@ export default function AddTask (){
                 <h2 className="text-center">Add New Task</h2>
                 <form onSubmit={onSubmitTask}>
                     <div className="form-group">
-                        <label>User name:</label>
+                        <label>Assigned to:</label>
                        <select required className="form-control" value={username} onChange={onChangeUsername}>
                            {users.map(user=>{
                                return (

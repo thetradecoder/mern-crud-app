@@ -69,7 +69,7 @@ export default function TodoList(){
             <table className="table table-responsive-lg table-striped">
                 <thead className="thead thead-light">
                     <tr>
-                        <th>User name</th>
+                        <th>Assigned to</th>
                         <th>Title/Description</th>                        
                         <th>Start date</th>
                         <th>Deadline</th>
